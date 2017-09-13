@@ -6,8 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import *
 from django.db.models import Sum
 
-
-
+@login_required
 def home(request):
    return render(request, 'portfolio/home.html',
                  {'portfolio': home})
