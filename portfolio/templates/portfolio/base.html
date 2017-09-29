@@ -10,6 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
     
+    
     <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
         .navbar {
@@ -49,7 +50,7 @@
         }
     </style>
 </head>
-<body id="app-layout">
+<body id="app-layout" style="background-image: url('{% static 'images/background.jpg' %}')">
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -74,6 +75,7 @@
                 <li><a href="{% url 'portfolio:customer_list' %}">Customers</a></li>
                 <li><a href="{% url 'portfolio:investment_list' %}">Investments</a></li>
                 <li><a href="{% url 'portfolio:stock_list' %}">Stocks</a></li>
+                <li><a href="{% url 'portfolio:mutualfund_list' %}">Mutual Funds</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
@@ -99,7 +101,7 @@
                 <div class="links">
                     <!-- Example row of columns -->
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-3">"{% static "images/customer.jpg" %}"
                             <div class="thumbnail">
                                 <img src="{% static "images/customer.jpg" %}" alt="customer"/>
                                 <div class="caption">
@@ -135,6 +137,18 @@
                                     <h2>Stock Portfolio</h2>
                                     <p>Our Stock portfolios vary across industries.</p>
                                     <p><a class="btn btn-default" href="{% url 'portfolio:stock_list' %}" role="button">View
+                                        details &raquo;</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="thumbnail">
+                                <img src="{% static "images/mutualfunds.jpg" %}" alt="mutual funds"/>
+                                <div class="caption">
+                                    <h2>Mutual Funds</h2>
+                                    <p>Our team also provides advises for Mutual Funds.</p>
+                                    <p><a class="btn btn-default" href="{% url 'portfolio:mutualfund_list' %}"
+                                          role="button">View
                                         details &raquo;</a></p>
                                 </div>
                             </div>

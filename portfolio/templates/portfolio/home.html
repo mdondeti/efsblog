@@ -1,6 +1,7 @@
 {% extends 'portfolio/base.html' %}
 {% load staticfiles %}
 {% block content %}
+
             {% if user.is_authenticated %}
                 <div class="page-container">
 
@@ -49,6 +50,18 @@
                                             <h2>Stock Portfolio</h2>
                                             <p>Our Stock portfolios vary across industries.</p>
                                             <p><a class="btn btn-primary" href="{% url 'portfolio:stock_list' %}"
+                                                  role="button">View
+                                                details &raquo;</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                  <div class="col-md-3">
+                                    <div class="thumbnail">
+                                        <img src="{% static "images/mutualfunds.jpg" %}" alt="mutual funds"/>
+                                        <div class="caption">
+                                            <h2>Mutual Funds</h2>
+                                            <p>Our team also provides advises for Mutual Funds.</p>
+                                            <p><a class="btn btn-primary" href="{% url 'portfolio:mutualfund_list' %}"
                                                   role="button">View
                                                 details &raquo;</a></p>
                                         </div>
